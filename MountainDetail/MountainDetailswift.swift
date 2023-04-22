@@ -15,12 +15,34 @@ struct MountainDetailView: View {
     var body: some View {
         ScrollView{
                 ZStack {
+
                     Image("good")
                         .resizable()
                         .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
                         .ignoresSafeArea()
                         .frame(width: .infinity, height: .infinity)
+                    VStack{
+                        HStack{
+                            Button(action: {
+                                presentationMode.wrappedValue.dismiss()
+                            }) {
+                                Text("← Back")
+                                    .font(.footnote)
+                                    .fontWeight(.bold)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 10)
+                                    .background(
+                                        Capsule()
+                                            .foregroundColor(.white)
+                                    )
+                                    .foregroundColor(.yellow)
+                            }
+                            .padding()
+                            Spacer()
+                        }
+                        Spacer()
+                    }
                     VStack(alignment: .leading) {
                         Text(mountain.name)
                             .font(.largeTitle)
@@ -83,30 +105,11 @@ struct MountainDetailView: View {
                             .padding(.top)
                         
                         Text(mountain.introduction)
-                            .padding(.top)
                         HStack{
-                            Button(action: {
-                                presentationMode.wrappedValue.dismiss()
-                            }) {
-                                Text("←Back")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .padding(.horizontal, 20)
-                                    .padding(.vertical, 10)
-                                    .background(
-                                        Capsule()
-                                            .foregroundColor(.white)
-                                            .overlay(
-                                                Capsule()
-                                                    .stroke(Color.yellow, lineWidth: 5)
-                                            )
-                                    )
-                                    .foregroundColor(.yellow)
-                                    .padding(.top, 8)
-                            }
+
                             Spacer()
                             NavigationStack{
-                                NavigationLink(destination: RouteView()){
+                                NavigationLink(destination: CustomMapView()){
                                     Text("Route →")
                                         .font(.title2)
                                         .fontWeight(.bold)
