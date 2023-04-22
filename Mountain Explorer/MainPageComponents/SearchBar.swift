@@ -21,17 +21,16 @@ struct SearchBarView: View {
 
     var body: some View {
             ZStack {
-
                 HStack{
                     TextField("", text: $searchText, onCommit: {
                         showSearchResult = true
                     })
                     .font(.caption)
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
                     .textFieldStyle(PlainTextFieldStyle())
                     .padding(.leading,37)
                     .frame(height: 40)
-                    .background(RoundedRectangle(cornerRadius: 20).fill(.primary))
+                    .background(RoundedRectangle(cornerRadius: 20).fill(.white.opacity(0.8)))
                     .padding(.horizontal)
                     .overlay(
                         HStack {
@@ -63,7 +62,7 @@ struct SearchBarView: View {
                         showSearchResult = true
                     }) {
                         Text("Search")
-                            .foregroundColor(.primary)
+                            .foregroundColor(.white)
                             .padding(.horizontal)
                             .padding(.vertical, 5)
                             .background(Color.blue)

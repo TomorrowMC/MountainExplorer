@@ -14,6 +14,11 @@
 		D0BA638029F3CFCC0080FD40 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA637F29F3CFCC0080FD40 /* SearchBar.swift */; };
 		D0BA638329F3D9B30080FD40 /* MainPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638229F3D9B30080FD40 /* MainPageInfo.swift */; };
 		D0BA638629F3DA960080FD40 /* EverySightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638529F3DA960080FD40 /* EverySightView.swift */; };
+		D0BA638829F3E0450080FD40 /* MountainScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638729F3E0450080FD40 /* MountainScrollView.swift */; };
+		D0BA638A29F3E8090080FD40 /* SelectPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638929F3E8090080FD40 /* SelectPlan.swift */; };
+		D0BA638D29F3F0020080FD40 /* FindDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638C29F3F0020080FD40 /* FindDestinationView.swift */; };
+		D0BA639029F41EFD0080FD40 /* MountainDetailswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638F29F41EFD0080FD40 /* MountainDetailswift.swift */; };
+		D0BA639229F428040080FD40 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA639129F428040080FD40 /* RouteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,11 @@
 		D0BA637F29F3CFCC0080FD40 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D0BA638229F3D9B30080FD40 /* MainPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageInfo.swift; sourceTree = "<group>"; };
 		D0BA638529F3DA960080FD40 /* EverySightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverySightView.swift; sourceTree = "<group>"; };
+		D0BA638729F3E0450080FD40 /* MountainScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainScrollView.swift; sourceTree = "<group>"; };
+		D0BA638929F3E8090080FD40 /* SelectPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlan.swift; sourceTree = "<group>"; };
+		D0BA638C29F3F0020080FD40 /* FindDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDestinationView.swift; sourceTree = "<group>"; };
+		D0BA638F29F41EFD0080FD40 /* MountainDetailswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDetailswift.swift; sourceTree = "<group>"; };
+		D0BA639129F428040080FD40 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +51,9 @@
 		D0BA636529F3CF400080FD40 = {
 			isa = PBXGroup;
 			children = (
+				D0BA639129F428040080FD40 /* RouteView.swift */,
+				D0BA638E29F41EEC0080FD40 /* MountainDetail */,
+				D0BA638B29F3EFFA0080FD40 /* FindDestination */,
 				D0BA637029F3CF400080FD40 /* Mountain Explorer */,
 				D0BA636F29F3CF400080FD40 /* Products */,
 			);
@@ -88,8 +101,26 @@
 			children = (
 				D0BA637F29F3CFCC0080FD40 /* SearchBar.swift */,
 				D0BA638529F3DA960080FD40 /* EverySightView.swift */,
+				D0BA638729F3E0450080FD40 /* MountainScrollView.swift */,
+				D0BA638929F3E8090080FD40 /* SelectPlan.swift */,
 			);
 			path = MainPageComponents;
+			sourceTree = "<group>";
+		};
+		D0BA638B29F3EFFA0080FD40 /* FindDestination */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA638C29F3F0020080FD40 /* FindDestinationView.swift */,
+			);
+			path = FindDestination;
+			sourceTree = "<group>";
+		};
+		D0BA638E29F41EEC0080FD40 /* MountainDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA638F29F41EFD0080FD40 /* MountainDetailswift.swift */,
+			);
+			path = MountainDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +195,13 @@
 			files = (
 				D0BA637429F3CF400080FD40 /* ContentView.swift in Sources */,
 				D0BA637229F3CF400080FD40 /* Mountain_ExplorerApp.swift in Sources */,
+				D0BA638D29F3F0020080FD40 /* FindDestinationView.swift in Sources */,
 				D0BA638029F3CFCC0080FD40 /* SearchBar.swift in Sources */,
 				D0BA638329F3D9B30080FD40 /* MainPageInfo.swift in Sources */,
+				D0BA638A29F3E8090080FD40 /* SelectPlan.swift in Sources */,
+				D0BA639229F428040080FD40 /* RouteView.swift in Sources */,
+				D0BA638829F3E0450080FD40 /* MountainScrollView.swift in Sources */,
+				D0BA639029F41EFD0080FD40 /* MountainDetailswift.swift in Sources */,
 				D0BA638629F3DA960080FD40 /* EverySightView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

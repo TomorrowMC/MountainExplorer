@@ -8,19 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var tmpInt = 0
     var body: some View {
-        VStack {
-            VStack{
-                SearchBarView()
-            }
-            Spacer()
-            VStack{
-                MountainView(mountain: MountainData().mountains[0])
-                    .frame(width: 280, height: 380)
+        GeometryReader { geometry in
+            NavigationStack{
+                ScrollView {
+                    VStack {
+                        SearchBarView()
+                        VStack(alignment:.leading){
+                            Text("Mount Song")
+                                .font(.largeTitle).bold()
+                            Text("A scenic area located in the northern part of Henan Province, China, the mountain is known for its picturesque natural scenery.")
+                                .font(.callout)
+                        }
+                        .padding()
+                        MountainScrollView()
+                            .frame(maxWidth: .infinity, maxHeight: 300)
+                            .padding(.vertical)
+                        FilterView()
+                            .padding(.vertical)
+                    }
+                }
+                .background(
+                    Image("good")
+                        .resizable()
+                        .scaledToFill()
+                        .blur(radius: 5)
+                        .frame(width: .infinity, height: .infinity)
+                        .ignoresSafeArea()
+                )
             }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

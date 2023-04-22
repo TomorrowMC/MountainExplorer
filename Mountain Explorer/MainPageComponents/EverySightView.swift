@@ -7,57 +7,64 @@ struct MountainView: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .fill(.primary.opacity(0.2))
+            .fill(.white.opacity(0.8))
             .shadow(radius: 5)
             .overlay(
                 VStack(alignment: .leading, spacing: 4) {
-                    ZStack(alignment: .topTrailing) {
-                        Image("good")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 250,height: 180)
-                            .cornerRadius(10)
-                            .clipped()
-                        Button(action: {
-                            isLiked.toggle()
-                        }) {
-                            HStack {
-                                Image(systemName: "heart.fill")
-                                Text(mountain.likedCount)
+                    VStack{
+                        ZStack(alignment: .topTrailing) {
+                            Image("good")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 180,height: 140)
+                                .cornerRadius(10)
+                                .clipped()
+                            
+                            Button(action: {
+                                isLiked.toggle()
+                            }) {
+                                HStack {
+                                    Image(systemName: "heart.fill")
+                                    Text(mountain.likedCount)
+                                }
+                                .font(.footnote)
+                                .foregroundColor(.white)
+                                .padding(4)
+                                .background(isLiked ? Color.red : Color.gray)
+                                .cornerRadius(5)
+                                .padding(5)
                             }
-                            .font(.footnote)
-                            .foregroundColor(.white)
-                            .padding(4)
-                            .background(isLiked ? Color.red : Color.gray)
-                            .cornerRadius(5)
-                            .padding(5)
                         }
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text(mountain.province)
-                            .font(.headline)
+                            .font(.footnote.bold())
+                        
                         Text(mountain.name)
-                            .font(.title2)
+                            .font(.subheadline.bold())
                         Text(String(format: "Length: %.2f km", mountain.length))
+                            .font(.footnote)
                         Text(String(format: "Altitude: %.2f m", mountain.altitude))
+                            .font(.footnote)
                         Text("Time: \(mountain.time)")
-                    }.padding(.top)
-                    
-                    HStack {
-                        ForEach(mountain.tags, id: \.self) { tag in
-                            Text("#\(tag)")
-                                .font(.footnote)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 5)
-                                .padding(.vertical, 2)
-                                .background(tagColor(tag: tag))
-                                .cornerRadius(5)
+                            .font(.footnote)
+                        HStack {
+                            ForEach(mountain.tags, id: \.self) { tag in
+                                Text("#\(tag)")
+                                    .font(.footnote)
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 5)
+                                    .padding(.vertical, 2)
+                                    .background(tagColor(tag: tag))
+                                    .cornerRadius(5)
+                            }
                         }
-                    }
+                    }.padding(.top,5)
+                    
+
                 }
             )
-            //.shadow(radius: 5)
     }
     
     private func tagColor(tag: String) -> Color {
@@ -77,7 +84,7 @@ struct MountainView: View {
 struct MountainView_Previews: PreviewProvider {
     static var previews: some View {
         MountainView(mountain: MountainData().mountains[0])
-            .frame(width: 280, height: 380)
+            .frame(width: 200, height: 290)
             .background(Color.gray)
     }
 }
