@@ -10,12 +10,15 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            VStack{
+                SearchBarView()
+            }
+            Spacer()
+            VStack{
+                MountainView(mountain: MountainData().mountains[0])
+                    .frame(width: 280, height: 380)
+            }
         }
-        .padding()
     }
 }
 
