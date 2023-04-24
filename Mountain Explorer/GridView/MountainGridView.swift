@@ -12,23 +12,29 @@ struct MountainGridView: View {
     @State private var isPresentingSightInfo: Mountain?
 
     var body: some View {
-        ScrollView {
-            let columns = [
-                GridItem(.fixed(UIScreen.main.bounds.width / 2.1)),                GridItem(.fixed(UIScreen.main.bounds.width / 2.1))
-            ]
-
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(mountains) { mountain in
-                    NavigationLink {
-                        MountainDetailView(mountain: mountain)
-                    } label: {
-                        GridViewUnit(mountain: mountain)
-                            .frame(width: UIScreen.main.bounds.width / 2 - 32, height: 290)
-                            .foregroundColor(.primary)
+        VStack(alignment: .leading){
+            Text("Favor Mountains")
+                .font(.largeTitle.bold())
+                .padding(.leading)
+                .foregroundColor(.white.opacity(0.8))
+            ScrollView {
+                let columns = [
+                    GridItem(.fixed(UIScreen.main.bounds.width / 2.1)),                GridItem(.fixed(UIScreen.main.bounds.width / 2.1))
+                ]
+                
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(mountains) { mountain in
+                        NavigationLink {
+                            MountainDetailView(mountain: mountain)
+                        } label: {
+                            GridViewUnit(mountain: mountain)
+                                .frame(width: UIScreen.main.bounds.width / 2 - 32, height: 290)
+                                .foregroundColor(.primary)
+                        }
                     }
                 }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
         }
         .background(
             Image("favor")
