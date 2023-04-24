@@ -8,7 +8,7 @@
 import Foundation
 import Foundation
 
-class Sight {
+class Sight: Identifiable{
     static var example:Sight = Sight(image: "sight1.jpg", name: "Sunrise Peak", supplies: ["Restroom", "Small shop", "Camping spot", "Fire pit", "Observation deck"], distanceToNextSight: "1.5km", timeToNextSight: "50min", briefDescription: "The most spectacular viewpoint", detailedDescription: "This is the highest peak of the mountain and offers an unparalleled view. It was selected as one of the best viewpoints in China in 2000 and has an altitude of 1500 meters.")
     var image: String
     var name: String

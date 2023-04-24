@@ -11,6 +11,7 @@ import SwiftUI
 struct SightDetailView: View {
     let sight: Sight
     
+    
     var body: some View {
         VStack {
             HStack {
@@ -49,20 +50,20 @@ struct SightDetailView: View {
             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.8)))
             
             if let distance = sight.distanceToNextSight, let time = sight.timeToNextSight {
-                VStack {
                     HStack {
-                        Spacer()
-                        Rectangle()
-                            .frame(width: 5, height: 80)
-                        VStack(alignment:.leading) {
-                            Text(distance)
-                                .font(.caption)
-                            Text(time)
-                                .font(.caption)
+                        HStack{
+                            Rectangle()
+                                .frame(width: 5, height: 50)
+                            VStack(alignment:.leading) {
+                                Text(distance)
+                                    .font(.caption)
+                                Text(time)
+                                    .font(.caption)
+                            }
                         }
+                        .padding(.leading,50)
                         Spacer()
                     }
-                }
             }else{
                 Text("")
                     .padding(.bottom)

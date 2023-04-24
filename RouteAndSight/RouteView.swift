@@ -2,6 +2,7 @@ import SwiftUI
 import MapKit
 
 struct CustomMapView: View {
+    @State private var isPresentingSightInfo :Sight?
     @State private var selectedRoute = 0
     @State var searchText: String = ""
     @Environment(\.presentationMode) var presentationMode
@@ -72,7 +73,7 @@ struct CustomMapView: View {
                 HStack{
                     Spacer()
                     NavigationLink{
-                        FindDestinationView()
+                        TrackingView()
                     }label: {
                         Text("Start→")
                             .font(.callout)
@@ -103,7 +104,13 @@ struct CustomMapView: View {
                         VStack {
                             ForEach(currentSightList.filter { searchText.isEmpty ? true : $0.name.contains(searchText) }, id: \.name) { sight in
                                 SightDetailView(sight: sight)
+                                    .onTapGesture {
+                                        isPresentingSightInfo = sight
+                                    }                            .sheet(item:$isPresentingSightInfo){sight in
+                                        SightInfoView(sight: sight)
+                                    }
                             }
+
                         }
                         
                     }

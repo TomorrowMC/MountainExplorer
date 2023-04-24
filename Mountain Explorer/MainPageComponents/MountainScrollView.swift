@@ -8,6 +8,8 @@ import SwiftUI
 
 struct MountainScrollView: View {
     var mountains: [Mountain]
+    @State private var isPresentingSightInfo :Mountain?
+
     
     init() {
         let allMountains = MountainData().mountains
@@ -26,8 +28,22 @@ struct MountainScrollView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
                 ForEach(mountains) { mountain in
-                    MountainView(mountain: mountain)
-                        .frame(width: 200, height: 290)
+                    NavigationLink{
+                        MountainDetailView(mountain: mountain)
+                    }label: {
+                        MountainView(mountain: mountain)
+                            .frame(width: 200, height: 290)
+                            .foregroundColor(.primary)
+                    }
+                    
+
+//                        .onTapGesture {
+//                            isPresentingSightInfo = mountain
+//                        }
+//                        .sheet(item: $isPresentingSightInfo){
+//                            mountain in
+//                            MountainDetailView(mountain: mountain)
+//                        }
                 }
             }
             .padding(.horizontal)

@@ -20,7 +20,9 @@
 		D0BA639029F41EFD0080FD40 /* MountainDetailswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638F29F41EFD0080FD40 /* MountainDetailswift.swift */; };
 		D0BA639229F428040080FD40 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA639129F428040080FD40 /* RouteView.swift */; };
 		D0E6717629F647480075B901 /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717529F647480075B901 /* RouteInfo.swift */; };
-		D0E6717929F66A710075B901 /* SightDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717829F66A710075B901 /* SightDetailView.swift */; };
+		D0E6717929F66A710075B901 /* UnitSightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717829F66A710075B901 /* UnitSightView.swift */; };
+		D0E6717C29F6716B0075B901 /* SightIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717B29F6716B0075B901 /* SightIntroView.swift */; };
+		D0E6717E29F67A760075B901 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717D29F67A760075B901 /* Sports.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +41,9 @@
 		D0BA639129F428040080FD40 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		D0E6717529F647480075B901 /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
 		D0E6717729F654AF0075B901 /* Mountain Explorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mountain Explorer.entitlements"; sourceTree = "<group>"; };
-		D0E6717829F66A710075B901 /* SightDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightDetailView.swift; sourceTree = "<group>"; };
+		D0E6717829F66A710075B901 /* UnitSightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSightView.swift; sourceTree = "<group>"; };
+		D0E6717B29F6716B0075B901 /* SightIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightIntroView.swift; sourceTree = "<group>"; };
+		D0E6717D29F67A760075B901 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,9 @@
 		D0BA636529F3CF400080FD40 = {
 			isa = PBXGroup;
 			children = (
-				D0E6717829F66A710075B901 /* SightDetailView.swift */,
-				D0BA639129F428040080FD40 /* RouteView.swift */,
+				D0E6717D29F67A760075B901 /* Sports.swift */,
 				D0BA638E29F41EEC0080FD40 /* MountainDetail */,
+				D0E6717A29F671190075B901 /* RouteAndSight */,
 				D0BA638B29F3EFFA0080FD40 /* FindDestination */,
 				D0BA637029F3CF400080FD40 /* Mountain Explorer */,
 				D0BA636F29F3CF400080FD40 /* Products */,
@@ -131,6 +135,16 @@
 			path = MountainDetail;
 			sourceTree = "<group>";
 		};
+		D0E6717A29F671190075B901 /* RouteAndSight */ = {
+			isa = PBXGroup;
+			children = (
+				D0E6717829F66A710075B901 /* UnitSightView.swift */,
+				D0BA639129F428040080FD40 /* RouteView.swift */,
+				D0E6717B29F6716B0075B901 /* SightIntroView.swift */,
+			);
+			path = RouteAndSight;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,16 +215,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E6717E29F67A760075B901 /* Sports.swift in Sources */,
 				D0BA637429F3CF400080FD40 /* ContentView.swift in Sources */,
 				D0BA637229F3CF400080FD40 /* Mountain_ExplorerApp.swift in Sources */,
 				D0E6717629F647480075B901 /* RouteInfo.swift in Sources */,
+				D0E6717C29F6716B0075B901 /* SightIntroView.swift in Sources */,
 				D0BA638D29F3F0020080FD40 /* FindDestinationView.swift in Sources */,
 				D0BA638029F3CFCC0080FD40 /* SearchBar.swift in Sources */,
 				D0BA638329F3D9B30080FD40 /* MainPageInfo.swift in Sources */,
 				D0BA638A29F3E8090080FD40 /* SelectPlan.swift in Sources */,
 				D0BA639229F428040080FD40 /* RouteView.swift in Sources */,
 				D0BA638829F3E0450080FD40 /* MountainScrollView.swift in Sources */,
-				D0E6717929F66A710075B901 /* SightDetailView.swift in Sources */,
+				D0E6717929F66A710075B901 /* UnitSightView.swift in Sources */,
 				D0BA639029F41EFD0080FD40 /* MountainDetailswift.swift in Sources */,
 				D0BA638629F3DA960080FD40 /* EverySightView.swift in Sources */,
 			);
