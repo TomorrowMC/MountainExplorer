@@ -2,23 +2,34 @@ import SwiftUI
 import MapKit
 
 struct FindDestinationView: View {
-    var locations: [Mountain] = MountainData().mountains
     @State var mountains: [Mountain] = MountainData().mountains
     @State var selectedId: Int = 0
+    @State var searchText: String
     @Environment(\.presentationMode) var presentationMode
     
-    init() {
+    var filteredMountains: [Mountain] {
+        if searchText.isEmpty {
+            return mountains
+        } else {
+            return mountains.filter { $0.name.contains(searchText) }
+        }
+    }
+    
+    init(searchText:String="") {
+        _searchText = State(initialValue: searchText)
         var locations: [Mountain] = MountainData().mountains
         for i in locations.indices {
 
         }
         self.mountains = locations
     }
+    
     var body: some View {
         NavigationStack{
             ZStack {
                 Map(coordinateRegion: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude:29.58 , longitude: 113.41), span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta:50))), interactionModes: .all)
                     .edgesIgnoringSafeArea(.all)
+                
                 VStack{
                     HStack{
                         Button(action: {
@@ -35,12 +46,16 @@ struct FindDestinationView: View {
                                 )
                                 .foregroundColor(.yellow)
                         }
-                        .padding()
+                        .padding(.leading)
+                        SearchBarView(searchText: $searchText,showText: false)
                         Spacer()
                     }
+                    .padding(.top)
+                   
                     Spacer()
                 }
-                ForEach(locations) { location in
+                
+                ForEach(filteredMountains) { location in
                     Image(systemName: "mappin.and.ellipse")
                         .foregroundColor(location.id == selectedId ? Color.red : Color.blue)
                         .font(.title)
@@ -49,9 +64,11 @@ struct FindDestinationView: View {
                 }
                 VStack{
                     Spacer()
+
+                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {
-                            ForEach(mountains) { mountain in
+                            ForEach(filteredMountains) { mountain in
                                 VStack{
                                     MountainView(mountain: mountain)
                                         .frame(width: 200, height: 290)
@@ -96,6 +113,7 @@ struct FindDestinationView: View {
         .navigationBarHidden(true)
     }
 }
+
 
 struct FindDestinationView_Previews: PreviewProvider {
     static var previews: some View {

@@ -19,6 +19,7 @@
 		D0BA638D29F3F0020080FD40 /* FindDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638C29F3F0020080FD40 /* FindDestinationView.swift */; };
 		D0BA639029F41EFD0080FD40 /* MountainDetailswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA638F29F41EFD0080FD40 /* MountainDetailswift.swift */; };
 		D0BA639229F428040080FD40 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA639129F428040080FD40 /* RouteView.swift */; };
+		D0E6717629F647480075B901 /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717529F647480075B901 /* RouteInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		D0BA638C29F3F0020080FD40 /* FindDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDestinationView.swift; sourceTree = "<group>"; };
 		D0BA638F29F41EFD0080FD40 /* MountainDetailswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDetailswift.swift; sourceTree = "<group>"; };
 		D0BA639129F428040080FD40 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
+		D0E6717529F647480075B901 /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
+		D0E6717729F654AF0075B901 /* Mountain Explorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mountain Explorer.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 		D0BA637029F3CF400080FD40 /* Mountain Explorer */ = {
 			isa = PBXGroup;
 			children = (
+				D0E6717729F654AF0075B901 /* Mountain Explorer.entitlements */,
 				D0BA638429F3DA730080FD40 /* MainPageComponents */,
 				D0BA638129F3D9A00080FD40 /* Model */,
 				D0BA637129F3CF400080FD40 /* Mountain_ExplorerApp.swift */,
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D0BA638229F3D9B30080FD40 /* MainPageInfo.swift */,
+				D0E6717529F647480075B901 /* RouteInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			files = (
 				D0BA637429F3CF400080FD40 /* ContentView.swift in Sources */,
 				D0BA637229F3CF400080FD40 /* Mountain_ExplorerApp.swift in Sources */,
+				D0E6717629F647480075B901 /* RouteInfo.swift in Sources */,
 				D0BA638D29F3F0020080FD40 /* FindDestinationView.swift in Sources */,
 				D0BA638029F3CFCC0080FD40 /* SearchBar.swift in Sources */,
 				D0BA638329F3D9B30080FD40 /* MainPageInfo.swift in Sources */,
@@ -259,7 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -313,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -328,12 +334,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mountain Explorer/Mountain Explorer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mountain Explorer/Preview Content\"";
 				DEVELOPMENT_TEAM = 6W3JQ99DH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MountainEx;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -346,9 +354,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "TomorrowMc.Mountain-Explorer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -357,12 +368,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mountain Explorer/Mountain Explorer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mountain Explorer/Preview Content\"";
 				DEVELOPMENT_TEAM = 6W3JQ99DH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MountainEx;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -375,9 +388,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "TomorrowMc.Mountain-Explorer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

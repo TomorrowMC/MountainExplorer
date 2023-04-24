@@ -100,7 +100,7 @@ struct QuickClimbingSetting: View {
                 .fill(Color.gray)
                 .frame(width: 200, height: 1)
                 .padding(.bottom, 8)
-            customPicker(items: distances, selectedIndex: $selectedDistance)
+            customHardPicker(items: distances, selectedIndex: $selectedDistance)
             
             Text("Consumption")
             Rectangle()
@@ -109,7 +109,7 @@ struct QuickClimbingSetting: View {
                 .frame(width: 200, height: 1)
                 .padding(.bottom, 8)
                 
-            customPicker(items: consumptions, selectedIndex: $selectedConsumption)
+            customHardPicker(items: consumptions, selectedIndex: $selectedConsumption)
             HStack{
                 Spacer()
                 NavigationStack{
@@ -208,7 +208,7 @@ struct ProfessionalClimbingSetting: View {
                     .fill(Color.gray)
                     .frame(width: 200, height: 1)
                     .padding(.bottom, 8)
-                customPicker(items: distances, selectedIndex: $selectedDistance)
+                customHardPicker(items: distances, selectedIndex: $selectedDistance)
             }
             VStack(alignment: .leading){
                 Text("Consumption")
@@ -216,7 +216,7 @@ struct ProfessionalClimbingSetting: View {
                     .fill(Color.gray)
                     .frame(width: 200, height: 1)
                     .padding(.bottom, 8)
-                customPicker(items: consumptions, selectedIndex: $selectedConsumption)
+                customHardPicker(items: consumptions, selectedIndex: $selectedConsumption)
             }
             VStack(alignment: .leading){
                 Text("Duration")
@@ -224,7 +224,7 @@ struct ProfessionalClimbingSetting: View {
                     .fill(Color.gray)
                     .frame(width: 200, height: 1)
                     .padding(.bottom, 8)
-                customPicker(items: durations, selectedIndex: $selectedDuration)
+                customHardPicker(items: durations, selectedIndex: $selectedDuration)
             }
             VStack(alignment: .leading){
                 Text("Type")
@@ -269,6 +269,31 @@ struct ProfessionalClimbingSetting: View {
         }
         .font(.title3)
         .padding(.leading, 10)
+    }
+    func customHardPicker(items: [String], selectedIndex: Binding<Int>) -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 20) {
+                ForEach(items.indices) { index in
+                    Button(action: {
+                        selectedIndex.wrappedValue = index
+                    }) {
+                        Text(items[index])
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 12)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .foregroundColor(
+                                        selectedIndex.wrappedValue == index
+                                        ? (index == 0 ? .green : index == 1 ? .yellow :index == 2 ?  .red : .red)
+                                            : .gray.opacity(0.4)
+                                    )
+                            )
+                            .foregroundColor(.white)
+                    }
+                }
+            }
+        }
+        .padding(.bottom, 10)
     }
 
     func customPicker(items: [String], selectedIndex: Binding<Int>) -> some View {

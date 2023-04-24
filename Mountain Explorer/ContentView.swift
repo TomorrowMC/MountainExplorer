@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var tmpInt = 0
+    @State var searchText: String = ""
     var body: some View {
         GeometryReader { geometry in
             NavigationStack{
                 ScrollView {
                     VStack {
-                        SearchBarView()
+                        SearchBarView(searchText: $searchText)
                         VStack(alignment:.leading){
                             Text("Mount Song")
                                 .font(.largeTitle).bold()

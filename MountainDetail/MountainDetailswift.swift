@@ -15,13 +15,6 @@ struct MountainDetailView: View {
     var body: some View {
         ScrollView{
                 ZStack {
-
-                    Image("good")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                        .ignoresSafeArea()
-                        .frame(width: .infinity, height: .infinity)
                     VStack{
                         HStack{
                             Button(action: {
@@ -135,6 +128,14 @@ struct MountainDetailView: View {
                     .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).opacity(0.8).padding(.horizontal))
                     .padding(.top, UIScreen.main.bounds.height * 0.33)
                 }
+                .background(
+                    Image("good")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: .infinity, height: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+                        .ignoresSafeArea()
+                )
         }
         .navigationBarHidden(true)
     }

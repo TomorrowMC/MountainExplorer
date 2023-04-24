@@ -11,11 +11,13 @@ struct SearchResultView: View {
 }
 
 struct SearchBarView: View {
-    @State private var searchText = ""
+    
+    @Binding var searchText:String
     @State private var searchPrompt = ""
     @State private var searchPrompts = ["Mount Huangshan", "Mount Tai", "Mount Wugong", "Mount Changbai"]
     @State private var showSearchPrompt = true
     @State private var showSearchResult = false
+    @State var showText:Bool = true
 
     let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
 
@@ -34,20 +36,23 @@ struct SearchBarView: View {
                     .padding(.horizontal)
                     .overlay(
                         HStack {
+                            Image(systemName: "magnifyingglass")
+                            .foregroundColor(.gray)
+                            .padding(.leading,30)
                             if showSearchPrompt {
-                                Image(systemName: "magnifyingglass")
-                                    .foregroundColor(.gray)
-                                    .padding(.leading,30)
-                                Text("Popular:")
+                                if showText{
+
+                                    Text("Popular:")
                                     .font(.footnote)
                                     .foregroundColor(.gray)
-                                Text(searchPrompt)
+                                    Text(searchPrompt)
                                     .font(.footnote)
                                     .foregroundColor(.gray)
                                     .bold()
                                     .onReceive(timer) { _ in
-                                        searchPrompt = searchPrompts.randomElement()!
-                                    }
+                                    searchPrompt = searchPrompts.randomElement()!
+                                }
+                            }
                             }
                             Spacer()
                         }
@@ -58,28 +63,24 @@ struct SearchBarView: View {
                 }
                 HStack{
                     Spacer()
-                    Button(action: {
-                        showSearchResult = true
-                    }) {
-                        Text("Search")
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
-                            .padding(.vertical, 5)
-                            .background(Color.blue)
-                            .cornerRadius(20)
+                    if showText{
+                        Button(action: {
+                            showSearchResult = true
+                        }) {
+                            Text("Search")
+                                .foregroundColor(.white)
+                                .padding(.horizontal)
+                                .padding(.vertical, 5)
+                                .background(Color.blue)
+                                .cornerRadius(20)
+                        }
+                        .padding(.trailing,20)
                     }
-                    .padding(.trailing,20)
                 }
-
             }
         .sheet(isPresented: $showSearchResult) {
-            SearchResultView(searchText: searchText)
+            FindDestinationView(searchText: searchText)
         }
     }
 }
 
-struct SearchBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBarView()
-    }
-}
