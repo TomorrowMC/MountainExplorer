@@ -23,7 +23,9 @@
 		D0E6717929F66A710075B901 /* UnitSightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717829F66A710075B901 /* UnitSightView.swift */; };
 		D0E6717C29F6716B0075B901 /* SightIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717B29F6716B0075B901 /* SightIntroView.swift */; };
 		D0E6717E29F67A760075B901 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6717D29F67A760075B901 /* Sports.swift */; };
-		D0E6718029F684840075B901 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D0E6717F29F684840075B901 /* readme.md */; };
+		D0E6718329F687300075B901 /* MountainGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6718229F687300075B901 /* MountainGridView.swift */; };
+		D0E6718529F6945E0075B901 /* GridViewUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E6718429F6945E0075B901 /* GridViewUnit.swift */; };
+		D0E6718729F6968F0075B901 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D0E6718629F6968F0075B901 /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +47,9 @@
 		D0E6717829F66A710075B901 /* UnitSightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSightView.swift; sourceTree = "<group>"; };
 		D0E6717B29F6716B0075B901 /* SightIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightIntroView.swift; sourceTree = "<group>"; };
 		D0E6717D29F67A760075B901 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
-		D0E6717F29F684840075B901 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		D0E6718229F687300075B901 /* MountainGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainGridView.swift; sourceTree = "<group>"; };
+		D0E6718429F6945E0075B901 /* GridViewUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewUnit.swift; sourceTree = "<group>"; };
+		D0E6718629F6968F0075B901 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +66,7 @@
 		D0BA636529F3CF400080FD40 = {
 			isa = PBXGroup;
 			children = (
-				D0E6717F29F684840075B901 /* readme.md */,
-				D0E6717D29F67A760075B901 /* Sports.swift */,
-				D0BA638E29F41EEC0080FD40 /* MountainDetail */,
-				D0E6717A29F671190075B901 /* RouteAndSight */,
-				D0BA638B29F3EFFA0080FD40 /* FindDestination */,
+				D0E6718629F6968F0075B901 /* readme.md */,
 				D0BA637029F3CF400080FD40 /* Mountain Explorer */,
 				D0BA636F29F3CF400080FD40 /* Products */,
 			);
@@ -83,6 +83,11 @@
 		D0BA637029F3CF400080FD40 /* Mountain Explorer */ = {
 			isa = PBXGroup;
 			children = (
+				D0E6718129F687220075B901 /* GridView */,
+				D0E6717D29F67A760075B901 /* Sports.swift */,
+				D0BA638E29F41EEC0080FD40 /* MountainDetail */,
+				D0E6717A29F671190075B901 /* RouteAndSight */,
+				D0BA638B29F3EFFA0080FD40 /* FindDestination */,
 				D0E6717729F654AF0075B901 /* Mountain Explorer.entitlements */,
 				D0BA638429F3DA730080FD40 /* MainPageComponents */,
 				D0BA638129F3D9A00080FD40 /* Model */,
@@ -148,6 +153,15 @@
 			path = RouteAndSight;
 			sourceTree = "<group>";
 		};
+		D0E6718129F687220075B901 /* GridView */ = {
+			isa = PBXGroup;
+			children = (
+				D0E6718229F687300075B901 /* MountainGridView.swift */,
+				D0E6718429F6945E0075B901 /* GridViewUnit.swift */,
+			);
+			path = GridView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,7 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0BA637929F3CF410080FD40 /* Preview Assets.xcassets in Resources */,
-				D0E6718029F684840075B901 /* readme.md in Resources */,
+				D0E6718729F6968F0075B901 /* readme.md in Resources */,
 				D0BA637629F3CF410080FD40 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,12 +240,14 @@
 				D0E6717C29F6716B0075B901 /* SightIntroView.swift in Sources */,
 				D0BA638D29F3F0020080FD40 /* FindDestinationView.swift in Sources */,
 				D0BA638029F3CFCC0080FD40 /* SearchBar.swift in Sources */,
+				D0E6718329F687300075B901 /* MountainGridView.swift in Sources */,
 				D0BA638329F3D9B30080FD40 /* MainPageInfo.swift in Sources */,
 				D0BA638A29F3E8090080FD40 /* SelectPlan.swift in Sources */,
 				D0BA639229F428040080FD40 /* RouteView.swift in Sources */,
 				D0BA638829F3E0450080FD40 /* MountainScrollView.swift in Sources */,
 				D0E6717929F66A710075B901 /* UnitSightView.swift in Sources */,
 				D0BA639029F41EFD0080FD40 /* MountainDetailswift.swift in Sources */,
+				D0E6718529F6945E0075B901 /* GridViewUnit.swift in Sources */,
 				D0BA638629F3DA960080FD40 /* EverySightView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

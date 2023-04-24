@@ -37,13 +37,6 @@ struct MountainScrollView: View {
                     }
                     
 
-//                        .onTapGesture {
-//                            isPresentingSightInfo = mountain
-//                        }
-//                        .sheet(item: $isPresentingSightInfo){
-//                            mountain in
-//                            MountainDetailView(mountain: mountain)
-//                        }
                 }
             }
             .padding(.horizontal)

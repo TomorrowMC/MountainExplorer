@@ -15,7 +15,14 @@ struct ContentView: View {
             NavigationStack{
                 ScrollView {
                     VStack {
-                        SearchBarView(searchText: $searchText)
+                        HStack{
+                            NavigationLink(destination: MountainGridView()) {
+                                Image(systemName: "star.circle")
+                                    .font(.title)
+                                    .padding(.leading)
+                            }
+                            SearchBarView(searchText: $searchText)
+                        }
                         VStack(alignment:.leading){
                             Text("Mount Song")
                                 .font(.largeTitle).bold()

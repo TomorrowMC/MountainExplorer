@@ -50,6 +50,7 @@ class Mountain:Identifiable {
 }
 
 struct MountainData {
+   static var favorMountains: [Mountain] = []
         var mountains: [Mountain] = [
             Mountain(id:1, name: "MOUNTAIN WUGONG", length: 10.67, altitude: 1678, time: "6h 50min", tags: ["Medium", "Impressed"], likedCount: "12.5k", province: "JIANG XT", location: CLLocationCoordinate2D(latitude: 0, longitude: 0), rate: Int.random(in: 3...5), peopleflow: Int.random(in: 3...5), energyConsumption: Int.random(in: 3...5), climbingTools: ["Climbing Pole", "Tent", "Raincoat", "Rope"], introduction: "Wugong Mountain, also known as Wu Peak, is located in the northwest of Jiangxi Province. It is the highest peak in Jiangxi Province with an altitude of 1918 meters."),
             Mountain(id:2, name: "YELLOW MOUNTAIN", length: 15.67, altitude: 2560, time: "12h 50min", tags: ["Hard", "Legendary"], likedCount: "12.5k", province: "AN HUI", location: CLLocationCoordinate2D(latitude: 0.001, longitude: 0), rate: Int.random(in: 3...5), peopleflow: Int.random(in: 3...5), energyConsumption: Int.random(in: 3...5), climbingTools: ["Climbing Pole", "Tent", "Raincoat", "Rope"], introduction: "Yellow Mountain, located in Huangshan City, Anhui Province, is a famous scenic spot in China, famous for its beautiful natural scenery and unique pine landscapes."),

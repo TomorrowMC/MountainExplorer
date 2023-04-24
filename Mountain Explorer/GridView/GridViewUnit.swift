@@ -1,6 +1,14 @@
+//
+//  GridViewUnit.swift
+//  Mountain Explorer
+//
+//  Created by 胡逸飞 on 2023/4/24.
+//
+
+import SwiftUI
 import SwiftUI
 
-struct MountainView: View {
+struct GridViewUnit: View {
     let mountain: Mountain
     
     @State private var isLiked = false
@@ -11,13 +19,13 @@ struct MountainView: View {
             .fill(.white.opacity(0.8))
             .shadow(radius: 5)
             .overlay(
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading) {
                     VStack{
                         ZStack(alignment: .topTrailing) {
                             Image("good")
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 180,height: 140)
+                                .frame(width: 150,height: 130)
                                 .cornerRadius(10)
                                 .clipped()
                             if !inList{
@@ -65,7 +73,7 @@ struct MountainView: View {
                                     .cornerRadius(5)
                             }
                         }
-                    }.padding(.top,5)
+                    }
                     
 
                 }
@@ -86,7 +94,7 @@ struct MountainView: View {
     }
 }
 
-struct MountainView_Previews: PreviewProvider {
+struct GridViewUnit_Previews: PreviewProvider {
     static var previews: some View {
         MountainView(mountain: MountainData().mountains[0])
             .frame(width: 200, height: 290)

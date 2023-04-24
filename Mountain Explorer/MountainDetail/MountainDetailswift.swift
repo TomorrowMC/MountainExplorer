@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MountainDetailView: View {
+    @State private var isShowingHelpSheet = false
     @State private var isPresented = false
     @Environment(\.presentationMode) var presentationMode
     let mountain: Mountain
@@ -40,7 +41,13 @@ struct MountainDetailView: View {
                         Text(mountain.name)
                             .font(.largeTitle)
                             .fontWeight(.bold)
-                        
+                        Button(action: {
+                            isShowingHelpSheet = true
+                        }, label: {
+                            Image(systemName: "questionmark.circle")
+                                .font(.footnote)
+                                .foregroundColor(.blue)
+                        })
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 20) {
                             VStack(alignment: .leading) {
                                 Text("Rating:")
@@ -88,6 +95,32 @@ struct MountainDetailView: View {
                                 }
                             }
                         }
+                        .sheet(isPresented: $isShowingHelpSheet, content: {
+                            VStack(alignment: .leading) {
+                                Text("Help")
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                    .padding(.bottom, 20)
+                                Text("Rating: This is a measure of how highly this mountain is rated by other climbers.")
+                                    .padding(.bottom, 10)
+                                Text("People Flow: This is an estimate of how many other climbers you can expect to see on the mountain.")
+                                    .padding(.bottom, 10)
+                                Text("Energy Consumption: This is an estimate of how physically demanding the climb is.")
+                                    .padding(.bottom, 10)
+                                HStack {
+                                    Text("Climbing Tools:")
+                                    ForEach(mountain.climbingTools, id: \.self) { tool in
+                                        Image(systemName: tool)
+                                    }
+                                }
+                                .padding(.bottom, 10)
+                                Text("Climbing Pole: This is used for stability and balance.")
+                                Text("Tent: This is used for camping overnight.")
+                                Text("Raincoat: This is used to stay dry in wet weather.")
+                                Text("Rope: This is used to help with climbing.")
+                            }
+                            .padding()
+                        })
                         
                         
                         .padding(.top)
