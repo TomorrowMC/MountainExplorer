@@ -69,6 +69,27 @@ struct CustomMapView: View {
             }
             VStack {
                 Spacer()
+                HStack{
+                    Spacer()
+                    NavigationLink{
+                        FindDestinationView()
+                    }label: {
+                        Text("Start→")
+                            .font(.callout)
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
+                            .background(
+                                Capsule()
+                                    .foregroundColor(.white)
+                                    .overlay(
+                                        Capsule()
+                                            .stroke(Color.blue, lineWidth: 5)
+                                    )
+                            )
+                            .foregroundColor(Color.blue)
+                    }
+                }
                 VStack {
                     Picker(selection: $selectedRoute, label: Text("选择路径")) {
                         Text("👑Route 1").tag(0)
@@ -81,18 +102,19 @@ struct CustomMapView: View {
                     ScrollView {
                         VStack {
                             ForEach(currentSightList.filter { searchText.isEmpty ? true : $0.name.contains(searchText) }, id: \.name) { sight in
-                                Text(sight.name)
-                                    .padding()
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.5)))
-                                    .padding(.bottom)
+                                SightDetailView(sight: sight)
                             }
                         }
+                        
                     }
+                    
                 }
                 .frame(height: UIScreen.main.bounds.height * 1 / 2)
                 .background(RoundedRectangle(cornerRadius: 20).fill(Color.white.opacity(0.8)))
+                
             }
             .padding()
+            
         }
         .navigationBarHidden(true)
     }
