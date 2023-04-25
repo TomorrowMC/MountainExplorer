@@ -1,4 +1,4 @@
-![Copy of Untitled Design (6).png](https://pic.peo.pw/a/2023/04/25/6447950a8a092.png)
+![Copy of Untitled Design (7).png](https://pic.peo.pw/a/2023/04/25/6447956950d73.png)
 # Mountain Explorer
 此项目旨在为专业登山人士提供一款交互友好的，美观的，可视化的登山地点查找，路线选择以及轨迹记录的APP。
 
