@@ -1,10 +1,12 @@
 ![Copy of Untitled Design (5).png](https://pic.peo.pw/a/2023/04/25/64479158740b9.png)
 # Mountain Explorer
 此项目旨在为专业登山人士提供一款交互友好的，美观的，可视化的登山地点查找，路线选择以及轨迹记录的APP。
+
 ##实际体验此项目
 ### 方法一：
 iPhone用户点击下面的TestFlight链接即可体验我们的真实App
 https://testflight.apple.com/join/cumekhqA
+
 ###方法二：
 使用xcode，将此代码完全pull到自己xcode中运行
 ## 关于此项目
@@ -19,7 +21,7 @@ This project aims to provide a user-friendly, beautiful and visual app for profe
 ### Method 1:
 iPhone users click on the TestFlight link below to experience our real app.
 https://testflight.apple.com/join/cumekhqA
-### Method two:
+### Method 2:
 Using xcode, pull this code completely into your own xcode and run it
 ## About this project
 This project is a human-computer interaction project, we based on swiftui native design and development, based on our prototype and swiftui dynamic features, to implement an app designed for professional climbers, users can collect their favorite mountains in this app to search for their favorite peaks, view and select the summit route, and provide a real-time A real-time timer is provided to record the user's energy consumption and summit route.
