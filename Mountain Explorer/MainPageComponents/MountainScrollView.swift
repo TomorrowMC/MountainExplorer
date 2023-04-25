@@ -14,15 +14,19 @@ struct MountainScrollView: View {
     init() {
         let allMountains = MountainData().mountains
         var selectedMountains: [Mountain] = []
-        
-        for _ in 0..<3 {
-            if let randomMountain = allMountains.randomElement() {
-                selectedMountains.append(randomMountain)
+        var selectedIndices: Set<Int> = []
+
+        while selectedIndices.count < 3 {
+            let randomIndex = Int.random(in: 0..<allMountains.count)
+            if !selectedIndices.contains(randomIndex) {
+                selectedIndices.insert(randomIndex)
+                selectedMountains.append(allMountains[randomIndex])
             }
         }
-        
+
         self.mountains = selectedMountains
     }
+
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {

@@ -17,25 +17,24 @@ struct SightDetailView: View {
             HStack {
                 Image(sight.image)
                     .resizable()
-                    .scaledToFit()
-                    .frame(height: 100)
+                    .scaledToFill()
+                    .frame(width: 120, height: 100)
                     .cornerRadius(10)
                     .padding(.trailing)
-                
-                VStack(alignment: .leading) {
+                VStack(alignment: .listRowSeparatorLeading){
                     Text(sight.name)
                         .font(.headline)
-                    
                     HStack {
                         if sight.supplies.isEmpty{
                             Text("No supplies")
                                 .font(.footnote)
+                                .frame(height: 20)
                         }else{
                             ForEach(sight.supplies, id: \.self) { supply in
                                 Image(supply) // Replace with the corresponding image for each supply
                                     .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 20)
+                                    .scaledToFill()
+                                    .frame(width: 20,height: 20)
                             }
                         }
                     }

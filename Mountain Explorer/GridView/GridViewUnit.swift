@@ -22,7 +22,7 @@ struct GridViewUnit: View {
                 VStack(alignment: .leading) {
                     VStack{
                         ZStack(alignment: .topTrailing) {
-                            Image("good")
+                            Image("\(mountain.name)")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 150,height: 130)

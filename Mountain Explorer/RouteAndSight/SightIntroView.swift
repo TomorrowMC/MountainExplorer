@@ -11,47 +11,64 @@ import SwiftUI
 
 struct SightInfoView: View {
     let sight: Sight
-    let supplies = ["Restroom", "Small shop", "Camping spot", "Fire pit", "Observation deck"]
+    let supplies = ["Restroom", "Small shop", "Camping spot", "Fire pit", "Viewing deck"]
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        ScrollView {
-            ZStack {
-                VStack {
-                    HStack {
-                        Button(action: {
-                            // Add your navigation back action here
-                            presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Text("← Back")
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                                .padding(.horizontal, 20)
-                                .padding(.vertical, 10)
-                                .background(
-                                    Capsule()
-                                        .foregroundColor(.white)
-                                )
-                                .foregroundColor(.yellow)
+        ZStack{
+            Image(sight.image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: .infinity, height: .infinity)
+                .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea()
+            ScrollView {
+                ZStack {
+                    VStack {
+                        HStack {
+                            Button(action: {
+                                // Add your navigation back action here
+                                presentationMode.wrappedValue.dismiss()
+                            }) {
+                                Text("← Back")
+                                    .font(.footnote)
+                                    .fontWeight(.bold)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 10)
+                                    .background(
+                                        Capsule()
+                                            .foregroundColor(.white)
+                                    )
+                                    .foregroundColor(.yellow)
+                            }
+                            .padding(.top,70)
+                            .padding(.leading,20)
+                            Spacer()
                         }
-                        .padding()
                         Spacer()
                     }
-                    Spacer()
-                }
-                VStack(alignment: .leading) {
-                    Text(sight.name)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    
-                    LazyVGrid(columns: [
-                        GridItem(.adaptive(minimum: 150)),
-                        GridItem(.adaptive(minimum: 150))
-                    ]){
+                    VStack(alignment: .leading) {
+                        Text(sight.name)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        
+                        LazyVGrid(columns: [
+                            GridItem(.adaptive(minimum: 150)),
+                            GridItem(.adaptive(minimum: 150))
+                        ]){
                             ForEach(supplies, id: \.self) { supply in
-                                HStack(alignment:.firstTextBaseline) {
-                                    Text(supply + ":")
-                                    
+                                VStack(alignment: .center){
+                                    HStack(alignment:.firstTextBaseline) {
+                                        Image(supply) // Replace with the corresponding image for each supply
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 20,height: 20)
+                                        Text(supply)
+                                        
+                                        
+                                            .alignmentGuide(.leading) { _ in 0 }
+                                            .padding(.top,5)
+                                    }
                                     if sight.supplies.contains(supply) {
                                         Image(systemName: "checkmark")
                                             .foregroundColor(.green)
@@ -60,32 +77,23 @@ struct SightInfoView: View {
                                             .foregroundColor(.red)
                                     }
                                 }
-                                .alignmentGuide(.leading) { _ in 0 }
-                                .padding(.top,3)
+                            }
                         }
-                    }
-                    .padding(.top)
-                    
-                    Text("Introduction:")
-                        .font(.title2)
-                        .fontWeight(.bold)
                         .padding(.top)
-                    
-                    Text(sight.detailedDescription)
+                        
+                        Text("Introduction:")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .padding(.top)
+                        
+                        Text(sight.detailedDescription)
+                    }
+                    .padding(.horizontal)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).opacity(0.8).padding(.horizontal))
+                    .padding(.top, UIScreen.main.bounds.height * 0.33)
                 }
-                .padding(.horizontal)
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).opacity(0.8).padding(.horizontal))
-                .padding(.top, UIScreen.main.bounds.height * 0.33)
             }
-            .background(
-                Image("good")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: .infinity, height: .infinity)
-                    .edgesIgnoringSafeArea(.all)
-                    .ignoresSafeArea()
-            )
         }
         .navigationBarHidden(true)
     }

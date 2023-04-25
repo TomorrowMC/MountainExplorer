@@ -14,7 +14,14 @@ struct MountainDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     let mountain: Mountain
     var body: some View {
-        ScrollView{
+        ZStack{
+            Image("\(mountain.name)")
+                .resizable()
+                .scaledToFill()
+                .frame(width: .infinity, height: .infinity)
+                .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea()
+            ScrollView{
                 ZStack {
                     VStack{
                         HStack{
@@ -32,7 +39,8 @@ struct MountainDetailView: View {
                                     )
                                     .foregroundColor(.yellow)
                             }
-                            .padding()
+                            .padding(.top,50)
+                            .padding(.leading,20)
                             Spacer()
                         }
                         Spacer()
@@ -48,6 +56,7 @@ struct MountainDetailView: View {
                                 .font(.footnote)
                                 .foregroundColor(.blue)
                         })
+                        .padding(.top,10)
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 20) {
                             VStack(alignment: .leading) {
                                 Text("Rating:")
@@ -89,41 +98,19 @@ struct MountainDetailView: View {
                                 Text("Climbing Tools:")
                                 HStack {
                                     ForEach(mountain.climbingTools, id: \.self) { tool in
-                                        Image(systemName: tool) // 请根据实际的图片名称替换
+                                        Image( tool) // 请根据实际的图片名称替换
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 20,height: 20)
                                     }
                                     Spacer()
                                 }
                             }
                         }
                         .sheet(isPresented: $isShowingHelpSheet, content: {
-                            VStack(alignment: .leading) {
-                                Text("Help")
-                                    .font(.largeTitle)
-                                    .fontWeight(.bold)
-                                    .padding(.bottom, 20)
-                                Text("Rating: This is a measure of how highly this mountain is rated by other climbers.")
-                                    .padding(.bottom, 10)
-                                Text("People Flow: This is an estimate of how many other climbers you can expect to see on the mountain.")
-                                    .padding(.bottom, 10)
-                                Text("Energy Consumption: This is an estimate of how physically demanding the climb is.")
-                                    .padding(.bottom, 10)
-                                HStack {
-                                    Text("Climbing Tools:")
-                                    ForEach(mountain.climbingTools, id: \.self) { tool in
-                                        Image(systemName: tool)
-                                    }
-                                }
-                                .padding(.bottom, 10)
-                                Text("Climbing Pole: This is used for stability and balance.")
-                                Text("Tent: This is used for camping overnight.")
-                                Text("Raincoat: This is used to stay dry in wet weather.")
-                                Text("Rope: This is used to help with climbing.")
-                            }
-                            .padding()
+                            HelperView(mountain: mountain)
                         })
                         
-                        
-                        .padding(.top)
                         
                         Text("Introduction:")
                             .font(.title2)
@@ -132,7 +119,7 @@ struct MountainDetailView: View {
                         
                         Text(mountain.introduction)
                         HStack{
-
+                            
                             Spacer()
                             NavigationStack{
                                 NavigationLink(destination: CustomMapView()){
@@ -161,14 +148,8 @@ struct MountainDetailView: View {
                     .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).opacity(0.8).padding(.horizontal))
                     .padding(.top, UIScreen.main.bounds.height * 0.33)
                 }
-                .background(
-                    Image("good")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: .infinity, height: .infinity)
-                        .edgesIgnoringSafeArea(.all)
-                        .ignoresSafeArea()
-                )
+            }
+
         }
         .navigationBarHidden(true)
     }

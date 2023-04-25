@@ -41,7 +41,7 @@ struct MapView: UIViewRepresentable {
 
 
 struct TrackingView: View {
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 29.58, longitude: 113.41), span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 29.58, longitude: 113.41), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     @State private var showEndAndResume = false
     @State private var elapsedTime = 0
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()

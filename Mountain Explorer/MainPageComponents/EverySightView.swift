@@ -14,7 +14,7 @@ struct MountainView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     VStack{
                         ZStack(alignment: .topTrailing) {
-                            Image("good")
+                            Image("\(mountain.name)")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 180,height: 140)
