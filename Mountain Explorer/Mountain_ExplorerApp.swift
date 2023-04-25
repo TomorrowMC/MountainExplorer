@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct Mountain_ExplorerApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
