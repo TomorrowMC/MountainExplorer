@@ -103,12 +103,15 @@ struct CustomMapView: View {
                     ScrollView {
                         VStack {
                             ForEach(currentSightList.filter { searchText.isEmpty ? true : $0.name.contains(searchText) }, id: \.name) { sight in
-                                SightDetailView(sight: sight)
-                                    .onTapGesture {
-                                        isPresentingSightInfo = sight
-                                    }                            .sheet(item:$isPresentingSightInfo){sight in
-                                        SightInfoView(sight: sight)
-                                    }
+                                NavigationLink{
+                                    SightInfoView(sight: sight)
+                                        
+            
+                                }label:{
+                                    SightDetailView(sight: sight)
+                                        .foregroundColor(.primary)
+                                }
+                                
                             }
 
                         }

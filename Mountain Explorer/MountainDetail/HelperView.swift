@@ -11,64 +11,62 @@ import MapKit
 struct HelperView: View {
     let mountain: Mountain
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Help")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.bottom, 20)
-            HStack{
-                Image(systemName:"star.fill")
-                    .foregroundColor(.yellow)
-                    .frame(height: 20)
-                Text("Rating: This is a measure of how highly this mountain is rated by other climbers.")}
+        ScrollView{
+            VStack(alignment: .leading) {
+                Text("Help")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 20)
+                HStack{
+                    Image(systemName:"star.fill")
+                        .foregroundColor(.yellow)
+                        .frame(height: 20)
+                    Text("Rating: This is a measure of how highly this mountain is rated by other climbers.")}
                 .padding(.bottom, 10)
-            HStack{
-                Image(systemName:"person.fill")
-                    .foregroundColor(.cyan)
-                    .frame(height: 20)
-                Text("People Flow: This is an estimate of how many other climbers you can expect to see on the mountain.")}
+                HStack{
+                    Image(systemName:"person.fill")
+                        .foregroundColor(.cyan)
+                        .frame(height: 20)
+                    Text("Generally speaking, it is better to climb when the crowd is three stars, it is not too crowded and you can get enough security.")}
                 .padding(.bottom, 10)
-            HStack{
-                Image(systemName:"bolt.fill")
-                    .foregroundColor(.red)
-                    .frame(height: 20)
-                Text("Energy Consumption: This is an estimate of how physically demanding the climb is.")}
+                HStack{
+                    Image(systemName:"bolt.fill")
+                        .foregroundColor(.red)
+                        .frame(height: 20)
+                    Text("Energy Consumption: Typically, three stars for physical exertion means that you can summit the mountain without food, and four stars means that most people need to carry food containing at least 200 grams of protein to make it to the top. Five stars for physical exertion means you may need to prepare a two-meal energy supplement to help you make the summit.")}
                 .padding(.bottom, 10)
-            HStack{
-                Image("Climbing Pole")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 20,height: 20)
-                Text("Climbing Pole: This is used for stability and balance.")}
+                HStack{
+                    Image("Climbing Pole")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 20,height: 20)
+                    Text("Climbing Pole: The mountain may not be steep, or some sections may be strenuous to climb with your bare hands,this sign means you may need to use Pole.")}
                 .padding(.bottom, 10)
-            HStack{
-                Image("Tent")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 20,height: 20)
-                Text("Tent: This is used for camping overnight.")
+                HStack{
+                    Image("Tent")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 20,height: 20)
+                    Text("Tent: This peak may not be climbed in one day, or some climbers like to climb it at night,this sign means you may need to bring a tent.")
                 }
                 .padding(.bottom, 10)
-            HStack{
-                Image("Raincoat")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 20,height: 20)
+                HStack{
+                    Image("Raincoat")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 20,height: 20)
                     
-                Text("Raincoat: This is used to stay dry in wet weather.")}
+                    Text("Raincoat: The weather on the mountain can be very changeable and you may often encounter thunderstorms, this sign means you need a raincoat.")}
                 .padding(.bottom, 10)
-            HStack{
-                Image("Rope")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 20,height: 20)
+                HStack{
+                    Image("Rope")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 20,height: 20)
                     
-                Text("Rope: This is used to help with climbing.")}
+                    Text("Rope: You may encounter places on the mountain that require climbing with ropes, and you may need to have the corresponding expertise. This sign means that you may need to use rope during the climb.")}
                 .padding(.bottom, 10)
-
-
-
-
+            }
         }
         .padding()
     }
