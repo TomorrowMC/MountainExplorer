@@ -6,14 +6,14 @@
 ### 方法一：
 iPhone用户点击下面的TestFlight链接即可体验我们的真实App
 https://testflight.apple.com/join/cumekhqA
-
-###方法二：
+### 方法二：
 使用xcode，将此代码完全pull到自己xcode中运行
 ## 关于此项目
 这个项目是一个人机交互的作业的项目，我们基于swiftui原生设计与开发，基于我们的原型图和swiftui的动效特性，实现了一个为专业登山者所设计的一款App，用户可以在这个App中收藏自己喜爱的山搜索匹配自己喜好的山峰，查看并选择登顶路线，并提供了一个实时更新的计时器用于记录用户的能量消耗与登顶路线。
 主要我们在用户的交互和布局上进行了细致的布局，功能方面我们目前使用的是模拟数据，并没有真正的筛选方式（但我们实现了搜索功能）。并且，我们的布局适应了不同屏幕大小的iOS设备，如Pro系列和promax系列
 ### 其他
 所有的代码均使用原生代码实现，没有涉及任何其他第三方包，我们注意到目前github目前没有swiftui的searchbar，所以此项目的search bar未来将开源在github上，可以实现搜索、跳转、与轮播
+
 # Mountain Explorer
 
 This project aims to provide a user-friendly, beautiful and visual app for professional climbers to find hiking locations, choose routes and record tracks.
