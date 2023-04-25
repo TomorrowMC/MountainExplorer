@@ -2,7 +2,7 @@
 # Mountain Explorer
 此项目旨在为专业登山人士提供一款交互友好的，美观的，可视化的登山地点查找，路线选择以及轨迹记录的APP。
 
-##实际体验此项目
+## 实际体验此项目
 ### 方法一：
 iPhone用户点击下面的TestFlight链接即可体验我们的真实App
 https://testflight.apple.com/join/cumekhqA
