@@ -1,14 +1,6 @@
 import SwiftUI
 
-struct SearchResultView: View {
-    let searchText: String
-    
-    var body: some View {
-        Text("未找到关于\(searchText)的内容")
-            .font(.title)
-            .padding()
-    }
-}
+
 
 struct SearchBarView: View {
     
@@ -56,6 +48,7 @@ struct SearchBarView: View {
                             }
                             Spacer()
                         }
+                            .allowsHitTesting(false)
                     )
                     .onChange(of: searchText) { text in
                         showSearchPrompt = text.isEmpty
