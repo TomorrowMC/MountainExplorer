@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D09EB9A229F7CA61004C4ADE /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D09EB9A129F7CA61004C4ADE /* LICENSE.txt */; };
+		D09EB9A429F7D250004C4ADE /* SearchBarComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EB9A329F7D250004C4ADE /* SearchBarComp.swift */; };
 		D0BA637229F3CF400080FD40 /* Mountain_ExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA637129F3CF400080FD40 /* Mountain_ExplorerApp.swift */; };
 		D0BA637429F3CF400080FD40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA637329F3CF400080FD40 /* ContentView.swift */; };
 		D0BA637629F3CF410080FD40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BA637529F3CF410080FD40 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		D09EB9A129F7CA61004C4ADE /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		D09EB9A329F7D250004C4ADE /* SearchBarComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarComp.swift; sourceTree = "<group>"; };
 		D0BA636E29F3CF400080FD40 /* Mountain Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mountain Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BA637129F3CF400080FD40 /* Mountain_ExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain_ExplorerApp.swift; sourceTree = "<group>"; };
 		D0BA637329F3CF400080FD40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				D0BA638529F3DA960080FD40 /* EverySightView.swift */,
 				D0BA638729F3E0450080FD40 /* MountainScrollView.swift */,
 				D0BA638929F3E8090080FD40 /* SelectPlan.swift */,
+				D09EB9A329F7D250004C4ADE /* SearchBarComp.swift */,
 			);
 			path = MainPageComponents;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				D0BA638D29F3F0020080FD40 /* FindDestinationView.swift in Sources */,
 				D0BA638029F3CFCC0080FD40 /* SearchBar.swift in Sources */,
 				D0E6718329F687300075B901 /* MountainGridView.swift in Sources */,
+				D09EB9A429F7D250004C4ADE /* SearchBarComp.swift in Sources */,
 				D0BA638329F3D9B30080FD40 /* MainPageInfo.swift in Sources */,
 				D0BA638A29F3E8090080FD40 /* SelectPlan.swift in Sources */,
 				D0BA639229F428040080FD40 /* RouteView.swift in Sources */,
@@ -395,6 +399,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,6 +434,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -6,6 +6,7 @@ struct SearchBarView: View {
     
     @Binding var searchText:String
     @State private var searchPrompt = ""
+    @State private var searchTip = "Popular:"
     @State private var searchPrompts = ["Mount Huangshan", "Mount Tai", "Mount Wugong", "Mount Changbai"]
     @State private var showSearchPrompt = true
     @State private var showSearchResult = false
@@ -33,8 +34,7 @@ struct SearchBarView: View {
                             .padding(.leading,30)
                             if showSearchPrompt {
                                 if showText{
-
-                                    Text("Popular:")
+                                    Text("\(searchTip)")
                                     .font(.footnote)
                                     .foregroundColor(.gray)
                                     Text(searchPrompt)

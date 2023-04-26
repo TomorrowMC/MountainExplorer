@@ -21,7 +21,7 @@ struct ContentView: View {
                                     .font(.title)
                                     .padding(.leading)
                             }
-                            SearchBarView(searchText: $searchText)
+                            customerSearchBar(searchText: $searchText, destination: FindDestinationView(searchText: searchText), presentationStyle: .navigationLink)
                         }
                         VStack(alignment:.leading){
                             Text("Mount Song")
